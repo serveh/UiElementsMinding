@@ -1,0 +1,23 @@
+tag supports-screens, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}anyDensity:true {http://schemas.android.com/apk/res/android}normalScreens:true {http://schemas.android.com/apk/res/android}largeScreens:true {http://schemas.android.com/apk/res/android}smallScreens:true {http://schemas.android.com/apk/res/android}xlargeScreens:true 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:android.permission.INTERNET 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:android.permission.ACCESS_NETWORK_STATE 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:com.android.vending.BILLING 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:android.permission.READ_PHONE_STATE 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:android.permission.ACCESS_WIFI_STATE 
+tag uses-permission, text NONE, tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}name:android.permission.WRITE_EXTERNAL_STORAGE 
+tag application, text NEWLINE        , tail NEWLINE, Attributes: {http://schemas.android.com/apk/res/android}allowBackup:true {http://schemas.android.com/apk/res/android}debuggable:false {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.BpApp {http://schemas.android.com/apk/res/android}icon:@drawable/ic_launcher {http://schemas.android.com/apk/res/android}label:@string/app_name 
+tag activity, text NEWLINE            , tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}label:@string/app_name {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.Main {http://schemas.android.com/apk/res/android}screenOrientation:portrait {http://schemas.android.com/apk/res/android}configChanges:keyboardHidden|orientation 
+tag intent-filter, text NEWLINE                , tail NEWLINE            , Attributes: 
+tag action, text NONE, tail NEWLINE                , Attributes: {http://schemas.android.com/apk/res/android}name:android.intent.action.MAIN 
+tag category, text NONE, tail NEWLINE            , Attributes: {http://schemas.android.com/apk/res/android}name:android.intent.category.LAUNCHER 
+tag meta-data, text NONE, tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}value:fb7aeb1aaa3e8885ead34173591dda88 {http://schemas.android.com/apk/res/android}name:com.tapfortap.API_KEY 
+tag activity, text NEWLINE            , tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}label:@string/lbl_payment {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.EditPayment {http://schemas.android.com/apk/res/android}screenOrientation:portrait {http://schemas.android.com/apk/res/android}configChanges:keyboardHidden|orientation 
+tag intent-filter, text NONE, tail NEWLINE        , Attributes: 
+tag activity, text NEWLINE            , tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}label:@string/app_name {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.Start {http://schemas.android.com/apk/res/android}screenOrientation:portrait {http://schemas.android.com/apk/res/android}configChanges:keyboardHidden|orientation 
+tag intent-filter, text NONE, tail NEWLINE        , Attributes: 
+tag activity, text NEWLINE            , tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}label:@string/lbl_payments {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.Payments {http://schemas.android.com/apk/res/android}screenOrientation:portrait {http://schemas.android.com/apk/res/android}configChanges:keyboardHidden|orientation 
+tag intent-filter, text NONE, tail NEWLINE        , Attributes: 
+tag activity, text NEWLINE            , tail NEWLINE        , Attributes: {http://schemas.android.com/apk/res/android}label:@string/accounts {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.Accounts {http://schemas.android.com/apk/res/android}screenOrientation:portrait {http://schemas.android.com/apk/res/android}configChanges:keyboardHidden|orientation 
+tag intent-filter, text NONE, tail NEWLINE        , Attributes: 
+tag activity, text NEWLINE            , tail NEWLINE    , Attributes: {http://schemas.android.com/apk/res/android}label:@string/settings {http://schemas.android.com/apk/res/android}name:ru.tubin.bp.activities.Preferences 
+tag intent-filter, text NONE, tail NEWLINE        , Attributes: 
