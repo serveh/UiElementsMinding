@@ -20,6 +20,17 @@ ui_element_feature = ['parentIDs', 'childIDs', 'parentIDsDyn', 'childIDsDyn', 'i
 UIELEMENTS_TAG = 'UIElement'
 SUB_FEAT_TAG = 'sub_feat'
 #ui_element_list = []
+IDENTIFIER_TAG = 'kindOfUiElement'
+
+
+def has_all_common_tags(element, verbose=False):
+    _children_tags = [ch.tag for ch in element.getchildren()]
+    for tt in ui_element_feature:
+        if tt not in _children_tags:
+            if verbose:
+                print('Common UI element feature "{}" is missing. The tag list includes {}'.format(tt, _children_tags))
+            return False
+    return True
 
 
 def traverse_children(children, ui_element_list, unknown_tag_list):
@@ -28,7 +39,7 @@ def traverse_children(children, ui_element_list, unknown_tag_list):
     else:
         child_dict = {}
         for ch in children:
-            if UIELEMENTS_TAG in ch.tag:
+            if has_all_common_tags(ch): # UIELEMENTS_TAG in ch.tag:
                 elem = ui_element_to_dic(ch, ui_element_list, unknown_tag_list)
                 ui_element_list.append(elem)
                 child_dict[ch.tag] = elem
@@ -42,11 +53,9 @@ def traverse_children(children, ui_element_list, unknown_tag_list):
 
 
 def ui_element_to_dic(element, ui_element_list, unknown_tag_list):
-    ui_element={}
+    ui_element = {}
+
     for child in element.getchildren():
-        if child.tag not in ui_element_feature:
-            print('Unknown UI element feature {}'.format(child.tag))
-            assert False
         ui_element[child.tag] = {'text':child.text, 'attributes': child.attrib}
         if 'child' in child.tag or 'parent' in child.tag:
             ids = []
@@ -83,7 +92,8 @@ def parse_xml(file_name):
 
 
 def main():
-    file_name = '/home/srwe/work/project/backstage/apks/ru.tubin.bp_v1.43/appSerialized.txt'
+    file_name = '/home/srwe/work/project/backstage/apks/mobi.infolife.ezweather.widget.figures/appSerialized.txt'
+    # ''/home/srwe/work/project/backstage/apks/ru.tubin.bp_v1.43/appSerialized.txt'
     ui_element_list = parse_xml(file_name)
     '''
     tree = ET.parse('/home/srwe/work/project/backstage/apks/ru.tubin.bp_v1.43/appSerialized.txt')
@@ -92,7 +102,7 @@ def main():
         traverse_children(child)
     '''
 
-    with open('data.json', 'w') as fp:
+    with open(file_name[:-4]+'.json', 'w') as fp:
         json.dump(ui_element_list, fp)
     print('DONE')
 
